@@ -1,0 +1,162 @@
+/* Global Styles */
+#root {
+  max-width: 100%;
+  min-height: 100vh;
+  background: url('/background.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  color: #333; /* Changed from white to a dark color for readability */
+}
+
+/* Logo Styles */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 2em #ff69b4); /* Pink glow effect */
+}
+
+/* Fireworks Animation */
+@keyframes fireworks {
+  0% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+  100% { opacity: 0; transform: scale(1.5) rotate(360deg); }
+}
+
+/* 🔥 Candle Flicker Animation */
+@keyframes flicker {
+  0% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.8; transform: scale(1); }
+}
+
+.animate-flicker {
+  animation: flicker 0.5s infinite alternate;
+}
+
+/* 🎆 Fireworks Animation */
+@keyframes fireworks {
+  0% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+  100% { opacity: 0; transform: scale(1.5) rotate(360deg); }
+}
+
+.fireworks {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #ff69b4, transparent); /* Pink explosion */
+  border-radius: 50%;
+  animation: fireworks 1.5s infinite;
+}
+
+
+/* Card Styles - Lighter Glassmorphism */
+.card {
+  background: rgba(255, 255, 255, 0.5); /* Increased transparency for a lighter effect */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.5); /* Soft pink glow */
+}
+
+/* Fallback for older Safari versions */
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .card {
+    background: rgba(255, 255, 255, 0.7);
+  }
+}
+
+/* Countdown Timer */
+.countdown {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-shadow: 0 0 10px #ff69b4; /* Pink shadow for birthday vibes */
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5); /* Soft pink glow */
+}
+
+/* Cake Animation */
+.cake {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: url('/src/assets/cake.gif') center/contain no-repeat;
+  margin-top: 2rem;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+.masonry-gallery {
+  column-count: 3;
+  column-gap: 15px;
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+}
+
+.masonry-item {
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.masonry-item img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.masonry-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .masonry-gallery {
+      column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-gallery {
+      column-count: 1;
+  }
+}
+
+
