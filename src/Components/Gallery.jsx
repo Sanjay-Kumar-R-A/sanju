@@ -1,5 +1,4 @@
 import React from "react";
-
 import memory1 from "../assets/1.jpeg";
 import memory2 from "../assets/2.jpeg";
 import memory3 from "../assets/3.jpeg";
